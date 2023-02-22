@@ -7,7 +7,7 @@ on:
       - '**.md'
       - '**.txt'
   schedule:
-    - cron: '20 20 * * *'  # 8:20pm everyday
+    - cron: '20 45 * * *'  # 8:45pm everyday (base image builds 8:20pm)
   push:
     branches:
       - main
@@ -15,7 +15,7 @@ on:
       - '**.md'
       - '**.txt'
 env:
-    IMAGE_NAME: sericea-base
+    IMAGE_NAME: custom-sericea
     IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
 
 jobs:
