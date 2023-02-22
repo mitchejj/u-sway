@@ -12,7 +12,7 @@ COPY etc /etc
 
 COPY ublue-firstboot /usr/bin
 
-RUN rpm-ostree override remove firefox firefox-langpacks \
+RUN rpm-ostree override remove  \
       open-vm-tools-desktop open-vm-tools qemu-guest-agent spice-vdagent \
       spice-webdavd virtualbox-guest-additions && \
     rpm-ostree install distrobox neovim tmux tailscale \
