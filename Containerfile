@@ -15,7 +15,11 @@ RUN rpm-ostree override remove  \
       spice-webdavd virtualbox-guest-additions && \
     rpm-ostree install neovim tmux tailscale \
     NetworkManager-tui nm-connection-editor-desktop wavemon \
-    powerline-fonts fontawesome5-fonts-all  && \
+    powerline-fonts fontawesome5-fonts-all google-android-emoji-fonts \
+    google-noto-sans-fonts google-noto-serif-fonts \
+    google-roboto-condensed-fonts google-roboto-fonts google-roboto-mono-fonts google-roboto-slab-fonts \
+    mozilla-fira-mono-fonts mozilla-fira-sans-fonts \
+    ibm-plex-fonts-all jetbrains-mono-fonts-all && \
     sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/tailscale.repo && \
     rm -rf \
         /tmp/* \
