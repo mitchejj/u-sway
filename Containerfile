@@ -8,20 +8,14 @@ FROM ghcr.io/mitchejj/sericea-base:${FEDORA_MAJOR_VERSION}
 # Add Tailscale
 RUN wget https://pkgs.tailscale.com/stable/fedora/tailscale.repo -O /etc/yum.repos.d/tailscale.repo
 
-COPY etc /etc
-
-COPY ublue-firstboot /usr/bin
+#COPY etc /etc
 
 RUN rpm-ostree override remove  \
       open-vm-tools-desktop open-vm-tools qemu-guest-agent spice-vdagent \
       spice-webdavd virtualbox-guest-additions && \
-    rpm-ostree install distrobox neovim tmux tailscale \
+    rpm-ostree install neovim tmux tailscale \
     NetworkManager-tui nm-connection-editor-desktop wavemon \
-    powerline-fonts fontawesome5-fonts-all \
-    just vte291-gtk4-devel && \
-    sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf && \
-    systemctl enable rpm-ostreed-automatic.timer && \
-    systemctl enable flatpak-automatic.timer && \
+    powerline-fonts fontawesome5-fonts-all  && \
     sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/tailscale.repo && \
     rm -rf \
         /tmp/* \
