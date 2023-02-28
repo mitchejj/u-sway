@@ -5,10 +5,12 @@ ARG FEDORA_MAJOR_VERSION=38
 FROM ghcr.io/mitchejj/sericea-base:${FEDORA_MAJOR_VERSION}
 # See https://pagure.io/releng/issue/11047 for final location
 
+RUN flatpak remote-modify fedora --disable
 COPY etc /etc
 
-RUN flatpak remote-delete fedora && \
-    rpm-ostree override remove  \
+# flatpak remote-delete fedora && \
+
+RUN rpm-ostree override remove  \
       open-vm-tools-desktop open-vm-tools qemu-guest-agent spice-vdagent \
       spice-webdavd virtualbox-guest-additions && \
     rpm-ostree install neovim tmux tailscale \
