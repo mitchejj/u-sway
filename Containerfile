@@ -5,9 +5,6 @@ ARG FEDORA_MAJOR_VERSION=38
 FROM ghcr.io/mitchejj/sericea-base:${FEDORA_MAJOR_VERSION}
 # See https://pagure.io/releng/issue/11047 for final location
 
-
-RUN 
-
 COPY etc /etc
 
 RUN flatpak remote-delete fedora && \
