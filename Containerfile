@@ -6,8 +6,8 @@ FROM ghcr.io/mitchejj/sericea-base:${FEDORA_MAJOR_VERSION}
 # See https://pagure.io/releng/issue/11047 for final location
 
 
- RUN flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo 
-#    flatpak remote-delete fedora
+RUN flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && \
+    flatpak remote-delete fedora
 
 COPY etc /etc
 
