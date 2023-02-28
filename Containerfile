@@ -7,12 +7,11 @@ FROM ghcr.io/mitchejj/sericea-base:${FEDORA_MAJOR_VERSION}
 
 # Add Tailscale
 #RUN wget https://pkgs.tailscale.com/stable/fedora/tailscale.repo -O /etc/yum.repos.d/tailscale.repo
-COPY etc /etc
 
 RUN flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && \
     flatpak remote-delete fedora
 
-#COPY etc /etc
+COPY etc /etc
 
 RUN rpm-ostree override remove  \
       open-vm-tools-desktop open-vm-tools qemu-guest-agent spice-vdagent \
