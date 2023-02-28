@@ -6,13 +6,8 @@ FROM ghcr.io/mitchejj/sericea-base:${FEDORA_MAJOR_VERSION}
 # See https://pagure.io/releng/issue/11047 for final location
 
 
-# RUN flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && \
+ RUN flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo 
 #    flatpak remote-delete fedora
-
-# Add Tailscale
-# RUN wget https://pkgs.tailscale.com/stable/fedora/tailscale.repo -O /etc/yum.repos.d/tailscale.repo
-
-
 
 COPY etc /etc
 
@@ -26,8 +21,8 @@ RUN rpm-ostree override remove  \
       google-roboto-condensed-fonts google-roboto-fonts google-roboto-mono-fonts google-roboto-slab-fonts \
       mozilla-fira-mono-fonts mozilla-fira-sans-fonts \
       ibm-plex-fonts-all jetbrains-mono-fonts-all && \
-    sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/tailscale.repo && \
     rm -rf \
+        /etc/yum.repos.d/tailscale.repo \
         /tmp/* \
         /var/* && \
     ostree container commit
