@@ -7,8 +7,6 @@ FROM ghcr.io/mitchejj/sericea-base:${FEDORA_MAJOR_VERSION}
 
 COPY etc /etc
 
-# flatpak remote-delete fedora && \
-
 RUN rpm-ostree override remove  \
       open-vm-tools-desktop open-vm-tools qemu-guest-agent spice-vdagent \
       spice-webdavd virtualbox-guest-additions && \
