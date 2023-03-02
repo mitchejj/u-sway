@@ -1,0 +1,33 @@
+rpms:
+  - neovim
+  - tmux
+  - tailscale \
+  - NetworkManager-tui
+  - nm-connection-editor-desktop
+  - wavemon
+  - powerline-fonts
+  - fontawesome5-fonts-all
+  - google-android-emoji-fonts
+  - google-noto-sans-fonts
+  - google-noto-serif-fonts
+  - google-roboto-condensed-fonts
+  - google-roboto-fonts
+  - google-roboto-mono-fonts
+  - google-roboto-slab-fonts
+  - mozilla-fira-mono-fonts
+  - mozilla-fira-sans-fonts
+  - ibm-plex-fonts-all
+  - jetbrains-mono-fonts-all
+remove-rpms:
+  - gnome-tweaks
+  - open-vm-tools-desktop
+  - open-vm-tools
+  - qemu-guest-agent
+  - spice-vdagent
+  - spice-webdavd
+  - virtualbox-guest-additions
+flatpaks:
+  - org.mozilla.firefox
+  - com.mattjakeman.ExtensionManager
+  - org.libreoffice.LibreOffice
+  - com.github.tchx84.Flatseal
