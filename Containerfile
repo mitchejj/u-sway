@@ -2,7 +2,8 @@
 ARG FEDORA_MAJOR_VERSION=38
 
 ## Build
-FROM ghcr.io/mitchejj/sericea-base:${FEDORA_MAJOR_VERSION}
+#FROM ghcr.io/mitchejj/sericea-base:${FEDORA_MAJOR_VERSION}
+FROM ghcr.io/ublue-os/sericea-main:38
 # See https://pagure.io/releng/issue/11047 for final location
 
 COPY etc /etc
