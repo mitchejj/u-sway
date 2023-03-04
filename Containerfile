@@ -12,7 +12,7 @@ RUN rpm-ostree override remove  \
       firefox firefox-langpacks vim \
       open-vm-tools-desktop open-vm-tools qemu-guest-agent spice-vdagent \
       spice-webdavd virtualbox-guest-additions && \
-    rpm-ostree install neovim tmux tailscale \
+    rpm-ostree install neovim tmux tailscale tlp-rdw \
       NetworkManager-tui nm-connection-editor-desktop wavemon \
       powerline-fonts fontawesome5-fonts-all google-android-emoji-fonts \
       google-noto-sans-fonts google-noto-serif-fonts \
