@@ -9,6 +9,7 @@ FROM ghcr.io/ublue-os/sericea-main:38
 COPY etc /etc
 
 RUN rpm-ostree override remove  \
+      firefox firefox-langpacks \
       open-vm-tools-desktop open-vm-tools qemu-guest-agent spice-vdagent \
       spice-webdavd virtualbox-guest-additions && \
     rpm-ostree install neovim tmux tailscale \
