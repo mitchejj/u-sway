@@ -11,8 +11,10 @@ COPY etc /etc
 #       firefox firefox-langpacks vim \
 RUN rpm-ostree override remove  \
       open-vm-tools-desktop open-vm-tools qemu-guest-agent spice-vdagent \
-      spice-webdavd virtualbox-guest-additions && \
+      spice-webdavd virtualbox-guest-additions \
+      firefox firefox-langpacks && \
     rpm-ostree install neovim tmux tailscale tlp-rdw \
+      vifm ldns-utils ncdu \
       NetworkManager-tui nm-connection-editor-desktop wavemon \
       powerline-fonts fontawesome5-fonts-all google-android-emoji-fonts \
       google-noto-sans-fonts google-noto-serif-fonts \
