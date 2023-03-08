@@ -12,13 +12,13 @@ RUN rpm-ostree override remove  \
       open-vm-tools-desktop open-vm-tools qemu-guest-agent spice-vdagent \
       spice-webdavd virtualbox-guest-additions \
       firefox firefox-langpacks && \
-    rpm-ostree install neovim tmux tailscale tlp-rdw \
+    rpm-ostree install neovim tmux tailscale power-profiles-daemon \
       vifm ldns-utils ncdu tumbler \
       NetworkManager-tui nm-connection-editor-desktop wavemon \
       powerline-fonts fontawesome5-fonts-all google-android-emoji-fonts \
       google-noto-sans-fonts google-noto-serif-fonts \
-      google-roboto-condensed-fonts google-roboto-fonts google-roboto-mono-fonts google-roboto-slab-fonts \
-      mozilla-fira-mono-fonts mozilla-fira-sans-fonts \
+      google-roboto* \
+      mozilla-fira-* fira-code-fonts \
       ibm-plex-fonts-all jetbrains-mono-fonts-all && \
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && \
     rm -rf \
